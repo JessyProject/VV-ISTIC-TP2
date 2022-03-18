@@ -23,3 +23,45 @@ Use your rule with different projects and describe you findings below. See the [
 
 ## Answer
 
+La règle ajoutée est la suivante
+
+```xml
+<ruleset name="Custom rules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        implement custom rules
+    </description>
+	<rule name="TripleIfCondictionDetecter"
+	      language="java"
+	      message="ferfer"
+	      class="net.sourceforge.pmd.lang.rule.XPathRule" >
+	    <description>
+		
+	    </description>
+	    <priority>3</priority>
+	    <properties>
+		<property name="xpath">
+		    <value>
+	<![CDATA[
+	//BlockStatement//IfStatement//IfStatement//IfStatement
+	]]>
+		    </value>
+		</property>
+	    </properties>
+	</rule>
+</ruleset>
+```
+
+On peut tester notre ruleset sur le programme [suivant](https://github.com/JessyProject/VV-ISTIC-TP2/tree/main/code/Exercise3).
+
+Avec pmd, on obtient les suggestions suivantes
+
+```shell
+/home/jessy/dev/Testing/TestIfCondition.java:9:	TripleIfCondictionDetecter:	tiple imbrication if detected
+/home/jessy/dev/Testing/TestIfCondition.java:20:	TripleIfCondictionDetecter:	tiple imbrication if detected
+```
+
+La règle semble fonctionner correctement.
