@@ -48,4 +48,4 @@ public synchronized boolean equals(final Object o) {
 }
 ```
 
-Il est vrai que pour la machine, les parenthèse autour de *o instanceof Properties* ne sont pas utiles. Cependant, elle simplifie la lecture du code pour l'homme. De ce point de vue, il n'est pas nécessaire de retirer les parenthèses.
+Il est vrai que pour la machine, les parenthèses autour de *o instanceof Properties* ne sont pas utiles. Cependant, elle simplifie la lecture du code d'un point de vue humain. Par conséquent, il n'est pas nécessaire de retirer les parenthèses.
